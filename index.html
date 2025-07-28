@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 60px;
+            /* gap: 30px; */
+        }
+
+        .left{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav{
+            display: flex;
+            column-gap: 20px;
+            row-gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline 2px #551a8b;
+            text-underline-offset: 5px;
+        }
+
+        .right{
+            display: flex;
+            gap: 20px;
+        }
+        .dropdown{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .Cart{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .auth{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        i{
+            color: #551a8b;
+            font-size: 16px;
+        }
+
+        .section{
+            position: relative;
+        }
+        .desc-sec{
+            height: 35vw;
+            background-color: antiquewhite;
+            background-image: url('https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Laptop-13-inch-1Ed-Detail-Ocean-Open-Copilot-PC:VP4-1399x600');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .desc-info{
+            top:120px;
+            left: 100px;
+            position: absolute;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 25px;
+        }
+
+        .desc-info button{
+            background-color: #005DA5;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            
+        }
+
+        .desc-info i{
+            color: #000;
+        }
+
+        .desc-info h3{
+            display: flex;
+            align-items: center;
+        }
+
+        .icons{
+            max-width: 100vw;
+            /* background-color: #005DA5; */
+            display: flex;
+            align-items:center ;
+            justify-content: center;
+            padding: 30px;
+            gap: 15px;
+        }
+        .icons i{
+            color: #000;
+        }
+
+        .help-btn{
+            padding: 10px 20px;
+            border-radius: 15px;
+            border: none;
+            border-bottom-right-radius: 0;
+            color: white;
+            background-color: #005DA5;
+            display: flex;
+            justify-self: end;
+            margin: 20px;
+        }
+
+        .AI-box{
+            background-color: #005DA5;
+            max-width: 100vw;
+            margin: 0 80px;
+            border-radius: 10px;
+            padding: 50px 20px;
+        }
+
+        .AI-box h1{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            align-items: center;
+        }
+
+        .AI-box .ask-bar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* gap: 140px; */
+            background-color: aliceblue;
+            margin: 0 350px;
+            /* border: 1px solid black; */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .AI-box .help{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .AI-box .help p{
+            background-color: aliceblue;
+            padding: 6px 18px;
+            border-radius: 20px;
+        }
+
+        .Shop{
+            display: flex;
+            margin: 80px;
+            /* background-color: antiquewhite; */
+            padding: 10px;
+            justify-content: space-evenly;
+        }
+
+        .Shop i{
+            color: #000;
+            /* background-color: aqua; */
+            width: 137.738px;
+            font-size: 25px;
+        }
+
+        .Shop .item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .Shop p{
+            font-size: 17px;
+            text-decoration: underline;
+            color: #005DA5;
+        }
+        
+        .offer-cards{
+            /* display: flex; */
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin: 0 80px;
+            column-gap: 15px;
+            /* background-color: antiquewhite; */
+            height: fit-content;
+            /* justify-content: space-between; */
+        }
+
+        .offer-cards .card{
+            /* width: 290px; */
+            /* height: 400px; */
+            /* background-color: #bfbfbf; */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+
+        
+        .offer-cards img{
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .offer-cards h1{
+            padding: 0 20px;
+        }
+        .offer-cards p{
+            padding: 0 20px;
+        }
+        .offer-cards button{
+            margin: 20px;
+            margin-top: 55px;
+            /* width: 160px; */
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: #005DA5;
+            color: white;
+            border: none;
+            /* font-weight: bold; */
+            font-size: 14px;
+        }
+        
+        .offer-cards .microsoft-apps button{
+            margin-top: 210px;
+        }
+        /* .offer-cards .copilotpc button{
+            margin-top: 80px;
+        } */
+
+        .offer-cards .cashback button{
+            margin-top: 125px;
+        }
+        .offer-cards .trade-in button{
+            margin-top: 105px;
+        }
+
+        .download-sec{
+            position: relative;
+        }
+        .hollow-download{
+            margin: 100px 80px;
+            height: 30vw;
+            background-color: antiquewhite;
+            background-image: url('https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Copilot-Native-App-ROW:VP5-1596x600');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .info-download{
+            top:120px;
+            left: 200px;
+            position: absolute;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 25px;
+        }
+
+        .download-sec button{
+            padding: 10px 30px;
+            border: none;
+            background-color: #005DA5;
+            color: white;
+        }
+
+        .main-business{
+            margin: 0 80px;
+        }
+
+       .business-cards{
+            /* display: flex; */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* grid-template-columns: repeat(4,1fr); */
+            gap: 15px;
+            height: fit-content;
+        }
+
+        .business-cards .card{
+            /* width: 290px; */
+            /* height: 400px; */
+            /* background-color: #bfbfbf; */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+
+        
+        .business-cards img{
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .business-cards h1{
+            padding: 0 20px;
+        }
+        .business-cards p{
+            padding: 0 20px;
+        }
+        .business-cards button{
+            margin: 20px;
+            /* margin-top: 55px; */
+            /* width: 160px; */
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: #005DA5;
+            color: white;
+            border: none;
+            /* font-weight: bold; */
+            font-size: 14px;
+        }
+        
+        /* .business-cards .microsoft-apps button{
+            margin-top: 210px;
+        } */
+        .business-cards .business2 button{
+            margin-top: 240px;
+        }
+
+        .business-cards .business3 button{
+            margin-top: 240px;
+        }
+        .business-cards .business4 button{
+            margin-top: 295px;
+        }
+
+        .ai-copilot{
+            margin: 50px  80px;
+            height: fit-content;
+        }
+
+        .ai-copilot .copilot{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            column-gap: 15px;
+        }
+
+        .ai-copilot .card{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        
+        .ai-copilot img{
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .ai-copilot h1{
+            padding: 0 20px;
+        }
+        .ai-copilot p{
+            padding: 0 20px;
+        }
+        .ai-copilot button{
+            margin: 20px;
+            /* margin-top: 55px; */
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: #005DA5;
+            color: white;
+            border: none;
+            font-size: 14px;
+        }
+
+
+        .Literacy-sec{
+            position: relative;
+        }
+        .literacy{
+            margin: 100px 80px;
+            margin-bottom: 0px;
+            height: 30vw;
+            background-color: antiquewhite;
+            background-image: url('https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-AI-Reading-Coach:VP5-1596x600');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .info-literacy{
+            top:120px;
+            left: 200px;
+            position: absolute;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 25px;
+        }
+
+        .Literacy-sec button{
+            padding: 10px 30px;
+            border: none;
+            background-color: #005DA5;
+            color: white;
+        }
+
+        .follow-microsoft{
+            margin: 30px 80px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .follow-microsoft i{
+            color: #000;
+            font-size: large;
+        }
+
+        .back-to-top{
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 7px 20px;
+            margin-left: 80px;
+            margin-right: 80px;
+            border: none;
+            justify-self: end;
+        }
+
+        .whole-footer{
+            background-color: #F2F2F2;
+            margin-top: 50px;
+            padding: 20px;
+            color: #616161;
+        }
+        .footer{
+            padding: 0px 80px 20px 80px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            gap: 70px;
+        }
+
+        .bottom{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .left-footer{
+            display: flex;
+            margin: 20px 80px;
+            gap: 20px;
+            /* background-color: #005DA5; */
+        }
+
+        .right-footer{
+            display: flex;
+            margin-left: 80px;
+            margin-right: 80px;
+            justify-self: flex-end;
+            gap: 20px;
+        }
+
+        .whole-footer p{
+            font-size: 14px;
+        }
+
+        @media (max-width: 1180px) {
+            .desc-info{
+                position: static;
+                max-width: 100vw;
+                padding: 10px;
+            }
+
+            .hollow-download{
+                margin-bottom: 0px;
+            }
+
+            .literacy{
+                margin-bottom: 0px;
+            }
+            
+            .info-download{
+                margin-top: 0;
+                margin-bottom: 100px;
+                margin-left: 80px;
+                margin-right: 80px;
+                position: static;
+                max-width: 100vw;
+                padding: 30px 40px;
+                /* background-color: #551a8b; */
+            }
+            .info-literacy{
+                margin-top: 0;
+                margin-bottom: 100px;
+                margin-left: 80px;
+                margin-right: 80px;
+                position: static;
+                max-width: 100vw;
+                padding: 30px 40px;
+                /* background-color: #551a8b; */
+            }
+        }
+
+
+        @media (max-width: 1000px) {
+            .right{
+                display: none;
+            }
+        }
+
+        @media (max-width:612px){
+            .left{
+                flex-direction: column;
+                row-gap: 10px;
+            }
+            .dis-sec {
+                height: 50vw;
+            }
+            .hollow-download{
+                height: 50vw;
+            }
+            .literacy{
+                height: 50vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="left">
+            <div class="logo">
+                <img height="23px" src="assets/logo.png" alt="">
+            </div>
+            <nav>
+                <a href="">Microsoft 365</a>
+                <a href="">Teams</a>
+                <a href="">Copilot</a>
+                <a href="">Windows</a>
+                <a href="">Surface</a>
+                <a href="">Xbox</a>
+                <a href="">Deals</a>
+                <a href="">Small Business</a>
+                <a href="">Support</a>
+            </nav>
+        </div>
+
+        <div class="right">
+            <div class="dropdown">
+                <a href="">All Microsoft</a>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="search">
+                <a href="">Search</a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="Cart">
+                <a href="">Cart</a>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="auth">
+                <a href="">Sign in</a>
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="desc-sec">
+        </div>
+        <div class="desc-info">
+            <h1>Trade in and get up to $500 cash back</h1>
+            <p>Get extra cash back, plus a 3-month trial of Microsoft 365 when you purchase a select new Surface Laptop, Copilot+ PC and trade in an eligible device. Offer ends 9/30.</p>
+            <button class="info-btn">Shop Surface Laptop, Copilot+ PCs</button>
+            <h3>Learn more about trade-ins &nbsp; <i class="fa-solid fa-angle-right" style="font-size: 20px;"></i>
+</h3>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fa-regular fa-circle-pause" style="font-size: 20px;"></i>
+        <i class="fa-solid fa-angle-left" style="font-size: 20px;"></i>
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-regular fa-circle"></i>
+        <i class="fa-solid fa-angle-right" style="font-size: 20px;"></i>
+    </div>
+
+    <button class="help-btn">Ask a Question</button>
+
+    <div class="AI-box">
+        <h1><i class="fa-solid fa-star-of-life" style="color: white; font-size: 18px;"></i> &nbsp; Hi there, ask me anything.</h1>
+        <div class="ask-bar">
+            <p>Ask me a question</p>
+            <i class="fa-solid fa-arrow-right" style="color: #000;"></i>
+        </div>
+        <div class="help">
+            <p>Help me choose a Surface</p>
+            <p>What's new in Microsoft365?</p>
+            <p>How can I try azure?</p>
+        </div>
+    </div>
+
+    <div class="Shop">
+        <div class="item">
+            <i class="fa-solid fa-tablet-screen-button"></i>
+            <p>Shop Surface devices</p>
+        </div>
+        <div class="item">
+            <i class="fa-brands fa-xbox"></i>
+            <p>Shop Xbox games and consoles</p>
+        </div>
+        <div class="item">
+            <i class="fa-regular fa-keyboard"></i>
+            <p>Shop for accessories</p>
+        </div>
+        <div class="item">
+            <i class="fa-solid fa-business-time"></i>
+            <p>Shop for your business</p>
+        </div>
+        <div class="item">
+            <i class="fa-solid fa-desktop"></i>
+            <p>Find your next PC</p>
+        </div>
+        <div class="item">
+            <i class="fa-brands fa-microsoft"></i>
+            <p>Choose your Microsoft365</p>
+        </div>
+    </div>
+
+    <div class="offer-cards">
+        <div class="card microsoft-apps">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQYcyyJTovCB2xdNtN3o1sFVkTkKqAW-ylg&s" alt="">
+            <h1>Achieve the extraordinary</h1>
+            <p>Microsoft 365 delivers cloud storage, security, and Microsoft Copilot in your favorite apps—all in one plan.</p>
+            <button class="shop-btn">Shop Microsoft365</button>
+        </div>
+        <div class="card copilotpc">
+            <img src="data:image/jpeg;base64,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" alt="">
+            <p style="background-color: goldenrod; width: fit-content;margin-left: 20px; padding: 5px 10px;">Now available with 5G</p>
+            <h1>Surface Laptop for Business, Copilot+PC, 13.8 and 15-inch | intel</h1>
+            <p>Uncompromising power, all-day battery life,* unique AI experiences —featuring Intel® Core™ Ultra processors (Series 2). Now available with optional 5G connectivity.</p>
+            <button class="shop-btn">Pre-order now</button>
+        </div>
+        <div class="card cashback">
+            <img src="https://www.netcombrunei.com/media/catalog/product/cache/7fba28f2ffd14e7be21e170ce6bb6de8/m/s/ms-461-1.jpg" alt="">
+            <h1>Up to $500 cash back with trade-in</h1>
+            <p>Buy a select new Surface Pro, Copilot+ PC by 9/30 and get extra cash back, plus a 3-month trial of Microsoft 365 when you trade in an eligible device.</p>
+            <button class="shop-btn" style="margin-bottom: 0;">Shop Surface pro, Copilot+PCs</button>
+            <p style="margin: 20px; padding: 0; display: flex; align-items: center; color:#005DA5 ; ">Learn more about trade-in options &nbsp; <i class="fa-solid fa-angle-right" style="font-size: 25px; color: #005DA5;"></i></p>
+        </div>
+        <div class="card trade-in">
+            <img src="assets/card3.png" alt="">
+            <h1>Trade in and get up to $180 for your used console</h1>
+            <p>Buy a new Xbox Series X or S and get cash back on an eligible trade-in. Limited-time offer.</p>
+            <button class="shop-btn" style="margin-bottom: 0;">Shop Xbox consoles</button>
+            <p style="margin: 20px; padding: 0; display: flex; align-items: center; color:#005DA5 ;">Check your device's eligibility &nbsp; <i class="fa-solid fa-angle-right" style="font-size: 25px; color: #005DA5;"></i></p>
+            <!-- <p>Check your device's eligibility &nbsp; <i class="fa-solid fa-angle-right" style="font-size: 25px;"></i></p> -->
+        </div>
+    </div>
+
+    <div class="download-sec">
+        <div class="hollow-download"></div>
+        <div class="info-download">
+            <h1>Copilot is your AI companion</h1>
+            <p>Always by your side, ready to support you whenever and wherever you need it.</p>
+            <button class="download-btn"><b>Download the copilot app</b></button>
+        </div>
+    </div>
+
+
+    <div class="main-business">
+        <h1 style="padding: 0; margin-bottom: 10px;">For Business</h1>
+        <div class="business-cards">
+            <div class="card business1">
+                <img src="data:image/jpeg;base64,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" alt="">
+                <p style="background-color: goldenrod; width: fit-content;margin-left: 20px; padding: 5px 10px;">New</p>
+                <h1>Meet the latest Surface for Business Copilot+ PCs</h1>
+                <p>Portable, powerful, and packed with world-class security—introducing Surface Pro for Business, 12-inch and Surface Laptop for Business, 13-inch with Snapdragon® processors.</p>
+                <button class="business-btn" style="margin-bottom: 0;">Shop Surface Pro for Business now</button>
+                <p style="margin: 20px; padding: 0; display: flex; align-items: center; color:#005DA5 ; ">Shop Surface Laptop for Business now &nbsp; <i class="fa-solid fa-angle-right" style="font-size: 25px; color: #005DA5;"></i></p>
+            </div>
+            <div class="card business2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQYcyyJTovCB2xdNtN3o1sFVkTkKqAW-ylg&s" alt="">
+                <h1>Microsoft 365 Copilot</h1>
+                <p>Save time and focus on the things that matter most with AI in Microsoft 365 for business.</p>
+                <button class="business-btn">Learn more</button>
+            </div>
+            <div class="card business3">
+                <img src="https://www.netcombrunei.com/media/catalog/product/cache/7fba28f2ffd14e7be21e170ce6bb6de8/m/s/ms-461-1.jpg" alt="">
+                <h1>20% off Windows 365</h1>
+                <p>Experience seamless productivity with Windows 365 Cloud PC—delivering the full Windows experience on any device.</p>
+                <button class="business-btn" style="margin-bottom: 0;">Learn more</button>
+            </div>
+            <div class="card business4">
+                <img src="assets/card3.png" alt="">
+                <h1>Join the era of AI</h1>
+                <p>Create, communicate, and code with the latest Microsoft AI solutions.</p>
+                <button class="business-btn" style="margin-bottom: 0;">Explore AI solutions</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ai-copilot">
+        <h1 style="padding: 0; margin-bottom: 10px;">Explore more about AI and Copilot</h1>
+        <div class="copilot">
+            <div class="card card1">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEBAVFRUVFhgVFRgXGBcVFxcVFRUXGBYVFhcYHSggGBolHRUWITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGislICUrKy0tLS8vLS01LS0tLy0tLS0tLy0uLS0tLSstLS0rLysuLS0tLS0tLS0tLS8rLS0tLf/AABEIALgBEQMBEQACEQEDEQH/xAAbAAEAAQUBAAAAAAAAAAAAAAAABQIDBAYHAf/EAEgQAAEDAgIECgYHBgQHAQAAAAEAAgMEEQUhEjFRcQYHEzJBYYGRobEiM0JScsEUI2KCkqKyQ1ODwtHhc5Oz8BUkRGPD0vEI/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAEDBAUCBv/EADIRAQACAgADBgQGAgIDAAAAAAABAgMRBCExEhNBUWFxIoGR8AUyobHB0ULhUvEUI0P/2gAMAwEAAhEDEQA/AO4oCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICC2+djec9o3kBBG1XCehi9bXUzPimjb4FyCMn4xsJZrxGA/C7T/SCgjKjjewluqd7/hikPjayCMqeO6gHMp6l/3Y2j8z7+CCNn49Gfs6B3VpzNb4NaUGI7jnq3+qooh96STwDQgpp+NvEGPa6opY+TJtbk5Yidui9xIJt1JqUbh2mmmD2Ne3U5ocNzhceaJXUBAQEBAQEBAQEBAQEBAQEBAQEHPce44sNpZXw3kldGS13JtBbpDWA5xANjkg1+o4/af9lQzO2aT2M8tJBiHjtq3+pwg9r5JP0xBTqUbhbfxlY9J6rDWt/hSH9Tgp7FvJHbr5rb+EPCiXUwRX2Mp22/zHFT3dvJ572nmtupOEknPri3+Mxn+kxT3VjvaqH8DMUk9bibv86of4XCnupee+jyWJuK97x9bXh1/+05x73yKe59UTn9FUXFRTDnVUx3NjZ56S9dzHm89/PkzouLagGvlnb5LfpAXruavM5rsyLgNh7f8AptL4nyO/mU93Xyee+v5suLgxQt1UUHawO/VdeuxXyee8t5s6KhhZzIIm/DGweQU6h57U+bIBtqyQaVxlSF5pYAc3Pe4b7CMeL1Tmno0cPHWXd6aLQY1g9lob3CyztK4gICAgICAgICAgICAgICAgICCI4XYgaehqpxrjgkc34gw6PjZBy7AuDlNHDEHU0LpBGzTe6NrnOeWguJLgTrJW2tIiOjBa9pmeachgY3msY34Wtb5Benjmym32lQmIXGhQ9aXWtUJVhqD0hErDlLyoIUoUEIKSiFJUoeIPEGn1kf0jHaSHWIxET+MzO8GBZs35mvBHwu8KleICAgICAgICAgICAgICAgICAg0vjbmtQcjfOpngpx18pIC4fha5TWNzEItOomUVbPLsW5zl1jVCdLzGqHpea1QlcaxQnS4GoljVlQ1msq7Dhtknl0ZuI4mmHlPXyQ8uNj2RcbSbDsXSrwMRHP8AtzZ4u9p+/wCP5XafFGu1gDcb+GtVZOD8luPirVn4mYsExMTqXRraLRuFBChKkohSUHhUoazwBZy/CCofa4iD+zk2RxDxkcseSd2luxRqkO3LwsEBAQEBAQEBAQEBAQEBAQEBAQaBxkSadXh8HuvlqSP8KPRYfxSKzFG7QqzTqkrDAtbGvsavL1C8xqhK+xqh6XWsUJYWJ4iIxZubvL+/UtfDcLOTnbp+7BxfG93umPnb9I9/X0a3LpPJLje+3V/ddmsVpGocSZ1MzM7mevn/AKWjE0ZnM7f6L1uZ5HxT6PI6lp1WIUWpMPVYmEthc17sJ1ZjcuXxlOl/k6nBX60+bNcFidBQUQpKlDxpF7nUMzuGZQQXEDCZH1dU4ZvP+pI97h4NWGZ26ERqNOyKEiAgICAgICAgICAgICAgICAgIOZ4/LyuMy55U1JHHufPIXn8jGq/BHOZUZ55RDKY1Xyzr7GrylkMaoenlTVMiF3ut1dJ7FZiw3yzqsKsuemL808/LxRxxwvB5NuiNQJzO8LfXgK0n4525+bjss7rERX9Zj+NomeQNzcVvpWZ5Q5nO3w0+rAkxRuxXxglfTg5iGNVVYaWPByc7RI69YVlKb3WVlKdaSjsKqgaiRgPotc/uaSoyc8e1mSn/qraeuobLgE13s64/wDfkubx1dY5908Jyza90+4LjuqoIUoUFBHcIankqWok92F5G/RIHiQotOolNY3aISHETRcnhxd78p7mNazzDlib3R0BAQEBAQEBAQEBAQEBAQEBAQEHKMMfylTiFR+8qywH7NPG2IdxDlpw/lZc0/FpMxtVitkMavKYY+IYgI/Rbm/wbv6+pauG4acnxW6fuycVxXd/DX837f79Go4hWElhcfWOtcnabZ9tl3sdIrExHgy48f5p6z9yyzVcnE0Fvplo9EDVlqyVcY+3eZ8PNmtTvLTO/h31RM1PUSm9g0bXG3cBcrXF8WONRz9nr/yuHwxqs7n0/tD4vTSwWLyC0mwc3VfYb6v7K7Hmpfo08Pnrn3EcpjwU08rpBEPZ5Ykn7Mcek4+IHaFXlvFbbjyTk1SbTP8Ax/edQiMHqToSv9qV3Jt3yHSeext/xBU05xWPn9GjPSItWvhEb+nKHR+CzLyOPQxmj2kgfJy5v4jbWOI8539/oy8FSe8m3p+7Y3LkOmtlShQUQ1fjIm0aCRoNjK+OIdrw4+DF4yz8KzFHxukcW9JyWG0zdrOU/wAxxf8AzLI2NlQEBAQEBAQEBAQEBAQEBAQEBBaq5xGx8jtTGucdzQSfJByjgRG76FC55u6UOnedrpnuk8nBa6cqwx5OdpbGwKULeIVXJt9Hnnm9XWtHDYO9tz6ffJn4niIxRqPzT0/trDXve8tF2u1l2ffmfSuehdzVa1/hybTFaza3P+/vxZUFC1hc4AvLiHEZFoI6WjoVVsk21E8me2fJljUzERHj4orG8RmizMZYCbA5HPZcHWtODHity3t6wcPiy21vc+v9Nbmxx/S49619iseDpRwVYhRV4i+enfG0aTuUiA3ucQB22Kot2aWi3uY8VMOWLTyjU/skMQi+j04hZ6UmhyYtrc+Q+kRvd4AKiL9uZtPSPuGfFac2bt25V3v5R0+kNcoGBsgDCCIvQaeh0p5ztwt3MG1WY45c2/NMzTdv8uftHhH35ur8EqTQpg465Dp/cGTO8Z/eXE/EMvbzajw5f3/Szh6dmm/PmlXLEuW3IKCpQ0TjUmOhTRDW6V7wP8Nlh4vCpzTyhdgjnMu74dTCKKOMewxrPwtA+SztLIQEBAQEBAQEBAQEBAQEBAQEBBq/GbWclhdW4HN0Rjbb3pSI2jvcghaOmEbGRjUxrWfhaB8lsYmbGFEphG4nIx79AHNg9K2oEnIb10uEralNz0no4/4javbia9Y6sWKma0lxJN8u7/6tN8szGmCclrxz5QisexGW2jE5jeousT26vFThvhid339FmKMe9TE/Rq+CVj5aoQThxa8PbIx1wbaBOroINiCtHEZOzTt09NN2WlaYu9r4dJhrmIUz2TOgF3ODtFttbr83tNwtffRNO024slb4oyTyjW59PNuFDTspIQHEFwOk8jO8pFrN22Bt2naubfNOS3L7hxsl7cTk3HTpHt6+/wB9EFjFc8u0R659w0fu2EekTsda99gV3bitYiP+/X2jw9XQ4fDXW5/LH6yyeB+C/SJWxNvoAXedVoxbSd1F5sB1WU5c3cYe14+Hv985X2ict9T8/v0/d2Bw2CwGQA6ANQXzup8WuazHgsOUPC2VIoKlDR8ei+kY1RQWu1rYyR1vmLnflYFnzTzacEcne1SuEBAQEBAQEBAQEBAQEBAQEBAQaNxqP0mUVP8Avq2LS644Q6V3ixq9UjdoebzqsvGZ5lamSFVU8tYS3XqHavWOKzaO10V57Wrjma9WvQRGPSc62Z3966N+JrOoq4l6a6ofGcc0Ac9yq7W5esODtc5aHiGIueTcq+vN1MWGKtg4NP03QTO5zIZmuO1rHaDb9hCqvaY3j8Nw5/GxNK3pHSZrP15yusDY3vqX+seLMyu5kZyuB0yP1NGy52qeI4jlGOPD7/R5+LJWMUfljr6z5e0eKKrsRcXBrG6UpyjY3MRjrPS7pLjqUY51G56fu14sETG55V8Z8/8AXlCOijzIB03OP1jhmHm/q49rAdZ9o9S3Yom09qzVO+Wo9o/n3nw8nQcCibSQ6Ur7F5BIGtzuho227ta85rd5bUOlwvD9iPVLQY3fUAOrWs04m7VYSsFUH71jy4uzzhg4jDEfFVUVSxqCg1LgjHy/COR1riEEbuSiDP1SLNkn4pascfDDuCrWCAgICAgICAgICAgICAgICAgIOe8MpeUxWli/cU01Qd8jmwsP61Zij4lWWfhZcYV8qIV1DfQduv3KPF4zRukteq9EAmV1gOi9u89G7Wpm/hDkxTc7t9GlYxwriaSyGkje3UdIAA7dbSTvJUVra09WqmG1vHXs17HoYw2OWEWZK0nR91w1jdmPFasOa25rPWF2C1ptNLdYSWBhzYo2BtzIwH7r3mQjtvF2XVV80VtM7ZuKrFrTb1/WI1/bEr61z3vtIGhpIfK7UDqLYx7TsrZahYZZ38U5zuV2PDWlYjXy8/f0YBnFiyIFrDz3H1ko+0fYZ9ka10MVfGV2p3uec+HlHt5yycNqQxwda5GTQB06gGjb5Lb24rHNswYZ3vx+/wBWbVVE8rrMaXyaiW5tiH7tn2ved2bq4vE9W61LxGqx83tHWSxPDZWuadjssto2q2JiyntWrOrN6wWruWnrHms+anKYWfmiYbG5cpy3jRmL6und0oNY4io+Vqq2qPtFxB/xZSf/ABhY5nctsRqHZ1CRAQEBAQEBAQEBAQEBAQEBAQEHNHv5XFa+XojbBTD7rTK8d7wrsXjKjN4QmIwrFcQjMWxQNuxp+I/ILzMsmbNv4a9HPOE2Kl3og5L1Su1FK7lqFZC4N07WC9d7ET2ateO0TOme7D3SQUoOQkLzubpHzAXmc1Yy3n2eLZYx2vbybfiUeiDo+jydPlb2b2YCOsAGy5/ebt82OlJ5TPPx+/m5y6YZECwHNHujY3ob2ZnauvSNdXUis/f3+/0UseXasgNfzVs54rDZg4abc2zYRhrI2CaqfyTCLtGZkc0+40ZtB97Inq1KieImZdnFgisff3/P7JFvCt7RoUVNHEwai8abj91tmt8VZSJv+aXuaXmOUaYruEctUfo1ZHEXaX1UrG6Do5PZJzN2HUR19S2Y6d3O6z8nLvab2nHeOfhLa+DsJuxpFjfPq0Tn5K3NaOzMvHOvXwbY5cdzWBjVTyVPNL7kUju5ht42SZ1CYjcqeICj0KCR59uUAbmRs/mc5Y2109AQEBAQEBAQEBAQEBAQEBAQEBByngdJysc9Tr+k1c8w+AP5OPwjV+PlVRk52T9W8tie4dDSfBelWSZikzHk0HEKk+kT1rxLlx0abM7TeAfacB2XWivKsyujlWZblitFSSUr6cytbNo5Gx0Wvys17gLDYdl1z+97NonyVYOxS1bTPxdf9MUQ/UU4tYsdoEHWOdcFZO91afZPYm8a9f5TVVRcoHt6XQ2HYXLN3vZtEupj4bbjdPSPLtB1w5p0TtBBsRbpN+hd6+aK135uhg4Wbz5RCfwums8MjYHyNzs63JxBuZkl6HOGsN1N1m5yWScszzn79nWxY4nlXlEeP34+n159JSiwmSskIYXPYD6cjr/WO9659nYF6rk02arEbnp+/q3mh4ERtb6VyduoKyM8qrcTz1EOdNpv+dkA1Rv0e1mR8QV3cM7pEy4947fEWtDp/B2nOjyrhm7m7j09tu7es/EX1Xss/FW1v1Szgsbn6avxkTFmHTgGxkMcQ+9I2/gCvGSfhWY4+JvXFdR8lhlOPeDn/jcSPCyzNLa0BAQEBAQEBAQEBAQEBAQEBAQRnCau5CkqJj+zhkf3MJCDSOCdHyNHTRkZthZfe5ukfElXxyhTPOU62MOBa4ZEEHcRYps1uObl+N07opHwu1sPeLXae0EFJ83EyVmlprPg1SM2mZ1SDzV//wAp9l/XHPsuR1kgmDA86LvSc3Kzi8ku0tuRAXJvrSa46zTeufT6N3qGXY0/bZ/Tyt3Lm3tqzdgwc0pVzcnLGfsEW26JvbeQXdyzzbbtYcPJDcIaLlxpUtbBA13rS4BsltRDZBnqyztvV2HJFfzVmfLybezkiute8+n8e7XWyUUTeQEl4ci9sFpZZyDlykhsxjAdTWk9pW6Jvae1MfVditExEVjp0jwj385T0XCaXQDKOBtPGBYE/WSW7fRB7CvcestMcL2viyzv0ahUiWsqdGaV8jWG7y5xIuPZA1DsXSxRFKbZLYa5s0Y6x8Nec+/hDbcNoPpdS4sb6IDQ86gdEWu4+G02XQwz3OCO39GLjc1IyWtV0BsIaLBY7Xm07lxrzNp3KhwUbV6aHxsT2hp4hrfOXW2iJhPm4LxknksxxzdpwOk5GmhitbQiY3ta0AqhczkBAQEBAQEBAQEBAQEBAQEBAQaZxuSn/hr4WmzqmWGnB/xZWh35Q5BW2KxsAbDIZdAyCt2r0yY2qNp01PjHwy7GVLRmw8m/ra7mHsNx95WY53PZlg47FuIvHhyn2cprcpmn7TT4haIjWO0T6qMUbpMGDs05gdgaPyhcTNOqtmLHvUe7o9XHoxM3sP52rj5b/F9Xa4bBzRvCqr9INabPIeY+i743D0b7SDbtU4o3znp4/N0sVNQ0OvxKKoN5aRwf0ua/QJI95hBF+vWunTHbHHK3L2edd5MfDPzSmEtgAv8AR5L7XPbbyXm3bn/J0ccTWOkQyZscJLW07Yw3MucDyhAGWiDqBJy3Aq/Fg3+ZVbLN5iKW35z9+v6bODGGOqZG09ObB3pSSa7N9pw27+kldulIiO8vHKOkOfxHF1x4+xi+c+f/AH5/R2Ojw+OCMRQsDGN1DpJ2uPSTtWa+S157Vp5uFMzM7l5IFG3nTHcFO0ac/wCGMfL4rQU9r6LQ4/xZQ0/laq7yso7yq3sQEBAQEBAQEBAQEBAQEBBZmq42c+Rjd7gPNBFVXC/D4+fXQDq5RpPcCSgiKrjPwtn/AFJf8Ech8dGyDm/G9wzhxGnhhoy+7JeUdpDQuA0hts88zfsQczGI1zObU1Dfhlf8nIMuDhlikfNr6kb3ud+q6C/UcYWKSMdFLVuexws4OjjN8769G41bVMWmJ3DzekXrNZ6ShzjcxcHEtJG1vUR0b1bfPe0TE+KmOFxxGo2v4dwikhcXBjHXN8792RWTJhi/WV+OsU6NjqOMp72hrqRmQAuHuGog9IPurDf8Ni077X6N2HjO7/x2hsc4TiqbZ8JaRKZGEPvYOFnMOQ6jfqV+DhO6nlO+WuicnF1ya3Xp6qaThA0WEjNI+8Rd3ab+lvKm3Dz4NWL8Rx1jU7/Rl1+OwPic1rn6RFgNCzRci5yPQLr1ixWrbcrMv4hivSa12sMxGnawMa64AAsQ4aZ2E2yaNZ26lvwzWJ3MqcvFYux2KTy8vP39HV+AuMYXTQZ4hBysmchcSw9TfSAsOm24dCs4jNFpiK9IczLbtTybXFj9HJ6utp3bpoz/ADKjanS5y7Hc17HbnNPkVOzSlzCdQ+anaNNFwNnL8JDsgs0744XEj8bgvFp5vdejt68pEBAQEBAQeE7UGFVYzTR+sqIm/E9o+aCJqeHuGs51bGfg0pP0AoIqfjVw4c0zP+GJzR3vsgjKjjghHq6OU/E5jR4EoIup436g+qo4m/G9z/ABqCLqONHEnX0TAz4Yz5ucfJBEVXDjFHg/808dTCxg7w0FBC1mNVrxeWonceuaQgDdp2QR8umTYnSvb0tE5ZbSAgxy82IJPUpFpwyt39J8BqUDyRouMhbx67gnWg9a06XX0Wzz6BlcKRQ1rrGxPj39ShClzjYf2vb/AHtRLx4zHoixF9W3uQeFjbkFjerozQUiBhy0M79B/t80HhpozqDkHn0SO9tJwG23y1oPRh7T+0t1kWB3GyCkYdcXDx2iyDwYW45BzSdaCg4XJsae3+yDwYfINTe4hBcBqYxpB0rQOkPI8ig6t/8AnelLp6iZ1yQzWc7mR4zvt+rPeg7xdAug9QEBB5dBo/GFhVdMWvo8RFO0NIdG5zo2ude+lpsBIyy1IOQ4thda0/XObOdrZuVH53A+CCJcx7OdTubuabd4FkFArWdOXcgutnaenwUgZPdLO0lBSeV6NHsz80Fp4m2O7APkgx5NL2tLtuoFkgIFlKF1mmdWn4oLgglPs94b80SqbSP2MH+/soLjaAe1bsv8yiD/AIc3oLh3f0QefQBe5OV825i46RcHJBafhxubEAX1Z5DoFyCgtmhf1dhRKkUbidVt9v6lBcjw839LV1f3CCplI0a3AjZe3kUHggjHST4/JBW1zBqBHbZBRJUAamtO82+SAKoW6L9QLhf5oKYoZnmwe4X2BsY73INvwfi/kqmnlqmNjSLfV3mf26mjvKbHWOA/B2LDoORgD3Fx0pHuFnPdawyGTWgahvOZJUDaGSnYgutcgrBQVICDxBSQgszUcb+fGx29oKCNqOC1E/nUrOy7T+UhBE1fF1Qv9iRu55Pg66CDq+KCmdzJnN3safEWKCGquJuQeqqWHfyjfmQgianipr280Nd8L2n9QCCKqeBOJRa6eXsaT+glBHS0NXHz4njeHD9TUGO6V/tR37GnyKketqrfs7fdI+SCsV7T0jvHzQViZp2+fkgokqGN5zgN+Xmgp+ks99vegodWsHtdwPzQWH4owbe0gf1QWzid9TL/AIneVkHoqpTzY3fhA/UgyIaKsk5kEh3A/wAoQSVNwJxOTVSvG9rv5rKBK03FXiT+dos3lo8roJWm4mpz6ypYNxcfIBBLUvExCPWVDjub/wCxKCYpeKegbzhI7tDfIIJam4A4ezVTA/E5zvMoJSn4O0rOZTxj7oQZ8dK1vNaBuACC8GoKgEHqD1B6gIPEHlkHlkCyAgICBZAsg8cwHXnvzQYVRg9PJ6ynidvY3+iCLqeA+Hv10rB8Jc3yKCJquK6hfzeUb97S/UEENVcTcJ9XUW+KMebSEEXUcS0hyFTGR/EHhcoPIOJB3t1bQOoPPzCCVpeJWkHrJ3u3NA8yUExScVeHM1xvdvdb9ICCXpuA+Hs1UjD8V3eZQSdPg1OzmU8TdzGj5IMxsYGoAbskHuig90UDRQLIPbIFkCyD2yBZB6gICD1AQEBB5ZAsgWQLIFkCyBZAsgWQLIFkCyBZAsgWQLIFkCyBZAsgWQLIFkCyBZAQEBB6gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg//Z" alt="">
+                <h1>Tapping students to fight cybercrime</h1>
+                <p>Learn how universities are training students about things on Microsoft security tools and AI to protect against cyberthreats.</p>
+                <button class="business-btn" style="margin-bottom: 0;">Uncover the details</button>
+            </div>
+            <div class="card card2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQYcyyJTovCB2xdNtN3o1sFVkTkKqAW-ylg&s" alt="">
+                <h1>15 Microsoft milestones that shaped AI</h1>
+                <p>From the launch of Bing to the development of Copilot, explore key innovations that shaped Microsoft’s vision for AI.</p>
+                <button class="business-btn">Find out more</button>
+            </div>
+            <div class="card card3">
+                <img src="https://www.netcombrunei.com/media/catalog/product/cache/7fba28f2ffd14e7be21e170ce6bb6de8/m/s/ms-461-1.jpg" alt="">
+                <h1>How AI makes hard work easier</h1>
+                <p>Dive into the surprising ways that Copilot reduces the mental effort of complex tasks and enhances quality of work.</p>
+                <button class="business-btn" style="margin-bottom: 0;">Uncover the details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="Literacy-sec">
+        <div class="literacy"></div>
+        <div class="info-literacy">
+            <h1>Building literacy with AI</h1>
+            <p>Discover how classrooms around the world are using Microsoft Reading Coach—an AI tool—to build confidence and reading skills in students.</p>
+            <button class="download-btn"><b>Learn more</b></button>   
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fa-regular fa-circle-pause" style="font-size: 20px;"></i>
+        <i class="fa-solid fa-angle-left" style="font-size: 20px;"></i>
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-regular fa-circle"></i>
+        <i class="fa-solid fa-angle-right" style="font-size: 20px;"></i>
+    </div>
+
+    <div class="follow-microsoft">
+        <p style="font-size: large;">Follow Microsoft</p>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+    </div>
+
+    <button class="back-to-top">Back to top &nbsp; <i class="fa-solid fa-arrow-up" style="color: #000;"></i></button>
+
+    <div class="whole-footer">
+        <div class="footer">
+            <div class="bottom whats-new">
+                <h3>What's new</h3>
+                <p>Suface Pro</p>
+                <p>Surface Laptop</p>
+                <p>Surface Laptop Studio 2</p>
+                <p>Surface Laptop Go 3</p>
+                <p>Microsoft Copilot</p>
+                <p>AI in Windows</p>
+                <p>Explore Microsoft products</p>
+                <p>Windows 11 apps</p>
+            </div>
+            <div class="bottom Microsoft-store">
+                <h3>Microsoft Store</h3>
+                <p>Account profile</p>
+                <p>Download Center</p>
+                <p>Microsoft Store support</p>
+                <p>Returns</p>
+                <p>Order tracking</p>
+                <p>Certified Refurbished</p>
+                <p>Microsoft Store Promise</p>
+                <p>Flexible Payments</p>
+            </div>
+            <div class="bottom Education">
+                <h3>Education</h3>
+                <p>Microsoft in education</p>
+                <p>Devices for education</p>
+                <p>Microsoft Teams for Education</p>
+                <p>Microsoft 365 Education</p>
+                <p>How to buy for your school</p>
+                <p>Educator training and development</p>
+                <p>Deals for students and parents</p>
+                <p>AI for education</p>
+            </div>
+            <div class="bottom business-footer">
+                <h3>Business</h3>
+                <p>Microsoft Cloud</p>
+                <p>Microsoft Security</p>
+                <p>Dynamics 365</p>
+                <p>Microsoft 365</p>
+                <p>Microsoft Power Platform</p>
+                <p>Microsoft Teams</p>
+                <p>Microsoft 365 Copilot</p>
+                <p>Small Business</p>
+            </div>
+            <div class="bottom development-it">
+                <h3>Developer & IT</h3>
+                <p>Azure</p>
+                <p>Microsoft Developer</p>
+                <p>Microsoft Learn</p>
+                <p>Support for AI marketplace apps</p>
+                <p>Microsoft Tech Community</p>
+                <p>Azure Marketplace</p>
+                <p>AppSource</p>
+                <p>Visual Studio</p>
+            </div>
+            <div class="bottom company">
+                <h3>Company</h3>
+                <p>Careers</p>
+                <p>About Microsoft</p>
+                <p>Company news</p>
+                <p>Privacy at Microsoft</p>
+                <p>Investors</p>
+                <p>Diversity and inclusion</p>
+                <p>Accessibility</p>
+                <p>Sustainability</p>
+            </div>
+        </div>
+        
+        <div class="left-footer">
+            <p><i class="fa-solid fa-earth-asia" style="color: #616161;"></i> &nbsp; English (United States)</p>
+            <p>Your Privacy Choices</p>
+            <p>Consumer Health Privacy</p>
+        </div>
+    
+        <div class="right-footer">
+            <p>Sitemap</p>
+            <p>Contract Microsoft</p>
+            <p>Privacy</p>
+            <p>Terms of use</p>
+            <p>Trademarks</p>
+            <p>Safety&Co</p>
+            <p>Recycling</p>
+            <p>About our ads</p>
+            <p>Microsoft 2025</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
