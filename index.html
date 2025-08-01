@@ -154,12 +154,15 @@
 
         .AI-box .ask-bar{
             display: flex;
-            /* flex-wrap: wrap; */
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             /* gap: 140px; */
             background-color: aliceblue;
-            margin: 0 350px;
+            /* 350px */
+            margin: 0 auto; 
+            max-width: 500px;
+            width: 100%;
             /* border: 1px solid black; */
             padding: 10px;
             border-radius: 10px;
@@ -168,6 +171,7 @@
         .AI-box .help{
             margin-top: 30px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 10px;
@@ -206,6 +210,7 @@
             font-size: 17px;
             text-decoration: underline;
             color: #005DA5;
+            margin-bottom: 10px;
         }
         
         .offer-cards{
@@ -466,7 +471,7 @@
         .footer{
             padding: 0px 80px 20px 80px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             /* grid-template-columns: repeat(6,1fr); */
             gap: 70px;
         }
@@ -533,6 +538,7 @@
                 padding: 30px 40px;
                 /* background-color: #551a8b; */
             }
+
         }
 
 
@@ -558,6 +564,14 @@
             }
         }
 
+        @media (max-width:401px) {
+            body{
+                background-color: pink;
+                display: block;
+                justify-content: center ;
+            }
+        }
+/* 401 */
     </style>
 </head>
 <body>
@@ -724,13 +738,13 @@
                 <img src="https://www.netcombrunei.com/media/catalog/product/cache/7fba28f2ffd14e7be21e170ce6bb6de8/m/s/ms-461-1.jpg" alt="">
                 <h1>20% off Windows 365</h1>
                 <p>Experience seamless productivity with Windows 365 Cloud PC—delivering the full Windows experience on any device.</p>
-                <button class="business-btn" style="margin-bottom: 0;">Learn more</button>
+                <button class="business-btn">Learn more</button>
             </div>
             <div class="card business4">
                 <img src="assets/card3.png" alt="">
                 <h1>Join the era of AI</h1>
                 <p>Create, communicate, and code with the latest Microsoft AI solutions.</p>
-                <button class="business-btn" style="margin-bottom: 0;">Explore AI solutions</button>
+                <button class="business-btn">Explore AI solutions</button>
             </div>
         </div>
     </div>
@@ -743,7 +757,7 @@
                 <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEBAVFRUVFhgVFRgXGBcVFxcVFRUXGBYVFhcYHSggGBolHRUWITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGislICUrKy0tLS8vLS01LS0tLy0tLS0tLy0uLS0tLSstLS0rLysuLS0tLS0tLS0tLS8rLS0tLf/AABEIALgBEQMBEQACEQEDEQH/xAAbAAEAAQUBAAAAAAAAAAAAAAAABQIDBAYHAf/EAEgQAAEDAgIECgYHBgQHAQAAAAEAAgMEEQUhEjFRcQYHEzJBYYGRobEiM0JScsEUI2KCkqKyQ1ODwtHhc5Oz8BUkRGPD0vEI/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAEDBAUCBv/EADIRAQACAgADBgQGAgIDAAAAAAABAgMRBCExEhNBUWFxIoGR8AUyobHB0ULhUvEUI0P/2gAMAwEAAhEDEQA/AO4oCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICC2+djec9o3kBBG1XCehi9bXUzPimjb4FyCMn4xsJZrxGA/C7T/SCgjKjjewluqd7/hikPjayCMqeO6gHMp6l/3Y2j8z7+CCNn49Gfs6B3VpzNb4NaUGI7jnq3+qooh96STwDQgpp+NvEGPa6opY+TJtbk5Yidui9xIJt1JqUbh2mmmD2Ne3U5ocNzhceaJXUBAQEBAQEBAQEBAQEBAQEBAQEHPce44sNpZXw3kldGS13JtBbpDWA5xANjkg1+o4/af9lQzO2aT2M8tJBiHjtq3+pwg9r5JP0xBTqUbhbfxlY9J6rDWt/hSH9Tgp7FvJHbr5rb+EPCiXUwRX2Mp22/zHFT3dvJ572nmtupOEknPri3+Mxn+kxT3VjvaqH8DMUk9bibv86of4XCnupee+jyWJuK97x9bXh1/+05x73yKe59UTn9FUXFRTDnVUx3NjZ56S9dzHm89/PkzouLagGvlnb5LfpAXruavM5rsyLgNh7f8AptL4nyO/mU93Xyee+v5suLgxQt1UUHawO/VdeuxXyee8t5s6KhhZzIIm/DGweQU6h57U+bIBtqyQaVxlSF5pYAc3Pe4b7CMeL1Tmno0cPHWXd6aLQY1g9lob3CyztK4gICAgICAgICAgICAgICAgICCI4XYgaehqpxrjgkc34gw6PjZBy7AuDlNHDEHU0LpBGzTe6NrnOeWguJLgTrJW2tIiOjBa9pmeachgY3msY34Wtb5Benjmym32lQmIXGhQ9aXWtUJVhqD0hErDlLyoIUoUEIKSiFJUoeIPEGn1kf0jHaSHWIxET+MzO8GBZs35mvBHwu8KleICAgICAgICAgICAgICAgICAg0vjbmtQcjfOpngpx18pIC4fha5TWNzEItOomUVbPLsW5zl1jVCdLzGqHpea1QlcaxQnS4GoljVlQ1msq7Dhtknl0ZuI4mmHlPXyQ8uNj2RcbSbDsXSrwMRHP8AtzZ4u9p+/wCP5XafFGu1gDcb+GtVZOD8luPirVn4mYsExMTqXRraLRuFBChKkohSUHhUoazwBZy/CCofa4iD+zk2RxDxkcseSd2luxRqkO3LwsEBAQEBAQEBAQEBAQEBAQEBAQaBxkSadXh8HuvlqSP8KPRYfxSKzFG7QqzTqkrDAtbGvsavL1C8xqhK+xqh6XWsUJYWJ4iIxZubvL+/UtfDcLOTnbp+7BxfG93umPnb9I9/X0a3LpPJLje+3V/ddmsVpGocSZ1MzM7mevn/AKWjE0ZnM7f6L1uZ5HxT6PI6lp1WIUWpMPVYmEthc17sJ1ZjcuXxlOl/k6nBX60+bNcFidBQUQpKlDxpF7nUMzuGZQQXEDCZH1dU4ZvP+pI97h4NWGZ26ERqNOyKEiAgICAgICAgICAgICAgICAgIOZ4/LyuMy55U1JHHufPIXn8jGq/BHOZUZ55RDKY1Xyzr7GrylkMaoenlTVMiF3ut1dJ7FZiw3yzqsKsuemL808/LxRxxwvB5NuiNQJzO8LfXgK0n4525+bjss7rERX9Zj+NomeQNzcVvpWZ5Q5nO3w0+rAkxRuxXxglfTg5iGNVVYaWPByc7RI69YVlKb3WVlKdaSjsKqgaiRgPotc/uaSoyc8e1mSn/qraeuobLgE13s64/wDfkubx1dY5908Jyza90+4LjuqoIUoUFBHcIankqWok92F5G/RIHiQotOolNY3aISHETRcnhxd78p7mNazzDlib3R0BAQEBAQEBAQEBAQEBAQEBAQEHKMMfylTiFR+8qywH7NPG2IdxDlpw/lZc0/FpMxtVitkMavKYY+IYgI/Rbm/wbv6+pauG4acnxW6fuycVxXd/DX837f79Go4hWElhcfWOtcnabZ9tl3sdIrExHgy48f5p6z9yyzVcnE0Fvplo9EDVlqyVcY+3eZ8PNmtTvLTO/h31RM1PUSm9g0bXG3cBcrXF8WONRz9nr/yuHwxqs7n0/tD4vTSwWLyC0mwc3VfYb6v7K7Hmpfo08Pnrn3EcpjwU08rpBEPZ5Ykn7Mcek4+IHaFXlvFbbjyTk1SbTP8Ax/edQiMHqToSv9qV3Jt3yHSeext/xBU05xWPn9GjPSItWvhEb+nKHR+CzLyOPQxmj2kgfJy5v4jbWOI8539/oy8FSe8m3p+7Y3LkOmtlShQUQ1fjIm0aCRoNjK+OIdrw4+DF4yz8KzFHxukcW9JyWG0zdrOU/wAxxf8AzLI2NlQEBAQEBAQEBAQEBAQEBAQEBBaq5xGx8jtTGucdzQSfJByjgRG76FC55u6UOnedrpnuk8nBa6cqwx5OdpbGwKULeIVXJt9Hnnm9XWtHDYO9tz6ffJn4niIxRqPzT0/trDXve8tF2u1l2ffmfSuehdzVa1/hybTFaza3P+/vxZUFC1hc4AvLiHEZFoI6WjoVVsk21E8me2fJljUzERHj4orG8RmizMZYCbA5HPZcHWtODHity3t6wcPiy21vc+v9Nbmxx/S49619iseDpRwVYhRV4i+enfG0aTuUiA3ucQB22Kot2aWi3uY8VMOWLTyjU/skMQi+j04hZ6UmhyYtrc+Q+kRvd4AKiL9uZtPSPuGfFac2bt25V3v5R0+kNcoGBsgDCCIvQaeh0p5ztwt3MG1WY45c2/NMzTdv8uftHhH35ur8EqTQpg465Dp/cGTO8Z/eXE/EMvbzajw5f3/Szh6dmm/PmlXLEuW3IKCpQ0TjUmOhTRDW6V7wP8Nlh4vCpzTyhdgjnMu74dTCKKOMewxrPwtA+SztLIQEBAQEBAQEBAQEBAQEBAQEBBq/GbWclhdW4HN0Rjbb3pSI2jvcghaOmEbGRjUxrWfhaB8lsYmbGFEphG4nIx79AHNg9K2oEnIb10uEralNz0no4/4javbia9Y6sWKma0lxJN8u7/6tN8szGmCclrxz5QisexGW2jE5jeousT26vFThvhid339FmKMe9TE/Rq+CVj5aoQThxa8PbIx1wbaBOroINiCtHEZOzTt09NN2WlaYu9r4dJhrmIUz2TOgF3ODtFttbr83tNwtffRNO024slb4oyTyjW59PNuFDTspIQHEFwOk8jO8pFrN22Bt2naubfNOS3L7hxsl7cTk3HTpHt6+/wB9EFjFc8u0R659w0fu2EekTsda99gV3bitYiP+/X2jw9XQ4fDXW5/LH6yyeB+C/SJWxNvoAXedVoxbSd1F5sB1WU5c3cYe14+Hv985X2ict9T8/v0/d2Bw2CwGQA6ANQXzup8WuazHgsOUPC2VIoKlDR8ei+kY1RQWu1rYyR1vmLnflYFnzTzacEcne1SuEBAQEBAQEBAQEBAQEBAQEBAQaNxqP0mUVP8Avq2LS644Q6V3ixq9UjdoebzqsvGZ5lamSFVU8tYS3XqHavWOKzaO10V57Wrjma9WvQRGPSc62Z3966N+JrOoq4l6a6ofGcc0Ac9yq7W5esODtc5aHiGIueTcq+vN1MWGKtg4NP03QTO5zIZmuO1rHaDb9hCqvaY3j8Nw5/GxNK3pHSZrP15yusDY3vqX+seLMyu5kZyuB0yP1NGy52qeI4jlGOPD7/R5+LJWMUfljr6z5e0eKKrsRcXBrG6UpyjY3MRjrPS7pLjqUY51G56fu14sETG55V8Z8/8AXlCOijzIB03OP1jhmHm/q49rAdZ9o9S3Yom09qzVO+Wo9o/n3nw8nQcCibSQ6Ur7F5BIGtzuho227ta85rd5bUOlwvD9iPVLQY3fUAOrWs04m7VYSsFUH71jy4uzzhg4jDEfFVUVSxqCg1LgjHy/COR1riEEbuSiDP1SLNkn4pascfDDuCrWCAgICAgICAgICAgICAgICAgIOe8MpeUxWli/cU01Qd8jmwsP61Zij4lWWfhZcYV8qIV1DfQduv3KPF4zRukteq9EAmV1gOi9u89G7Wpm/hDkxTc7t9GlYxwriaSyGkje3UdIAA7dbSTvJUVra09WqmG1vHXs17HoYw2OWEWZK0nR91w1jdmPFasOa25rPWF2C1ptNLdYSWBhzYo2BtzIwH7r3mQjtvF2XVV80VtM7ZuKrFrTb1/WI1/bEr61z3vtIGhpIfK7UDqLYx7TsrZahYZZ38U5zuV2PDWlYjXy8/f0YBnFiyIFrDz3H1ko+0fYZ9ka10MVfGV2p3uec+HlHt5yycNqQxwda5GTQB06gGjb5Lb24rHNswYZ3vx+/wBWbVVE8rrMaXyaiW5tiH7tn2ved2bq4vE9W61LxGqx83tHWSxPDZWuadjssto2q2JiyntWrOrN6wWruWnrHms+anKYWfmiYbG5cpy3jRmL6und0oNY4io+Vqq2qPtFxB/xZSf/ABhY5nctsRqHZ1CRAQEBAQEBAQEBAQEBAQEBAQEHNHv5XFa+XojbBTD7rTK8d7wrsXjKjN4QmIwrFcQjMWxQNuxp+I/ILzMsmbNv4a9HPOE2Kl3og5L1Su1FK7lqFZC4N07WC9d7ET2ateO0TOme7D3SQUoOQkLzubpHzAXmc1Yy3n2eLZYx2vbybfiUeiDo+jydPlb2b2YCOsAGy5/ebt82OlJ5TPPx+/m5y6YZECwHNHujY3ob2ZnauvSNdXUis/f3+/0UseXasgNfzVs54rDZg4abc2zYRhrI2CaqfyTCLtGZkc0+40ZtB97Inq1KieImZdnFgisff3/P7JFvCt7RoUVNHEwai8abj91tmt8VZSJv+aXuaXmOUaYruEctUfo1ZHEXaX1UrG6Do5PZJzN2HUR19S2Y6d3O6z8nLvab2nHeOfhLa+DsJuxpFjfPq0Tn5K3NaOzMvHOvXwbY5cdzWBjVTyVPNL7kUju5ht42SZ1CYjcqeICj0KCR59uUAbmRs/mc5Y2109AQEBAQEBAQEBAQEBAQEBAQEBByngdJysc9Tr+k1c8w+AP5OPwjV+PlVRk52T9W8tie4dDSfBelWSZikzHk0HEKk+kT1rxLlx0abM7TeAfacB2XWivKsyujlWZblitFSSUr6cytbNo5Gx0Wvys17gLDYdl1z+97NonyVYOxS1bTPxdf9MUQ/UU4tYsdoEHWOdcFZO91afZPYm8a9f5TVVRcoHt6XQ2HYXLN3vZtEupj4bbjdPSPLtB1w5p0TtBBsRbpN+hd6+aK135uhg4Wbz5RCfwums8MjYHyNzs63JxBuZkl6HOGsN1N1m5yWScszzn79nWxY4nlXlEeP34+n159JSiwmSskIYXPYD6cjr/WO9659nYF6rk02arEbnp+/q3mh4ERtb6VyduoKyM8qrcTz1EOdNpv+dkA1Rv0e1mR8QV3cM7pEy4947fEWtDp/B2nOjyrhm7m7j09tu7es/EX1Xss/FW1v1Szgsbn6avxkTFmHTgGxkMcQ+9I2/gCvGSfhWY4+JvXFdR8lhlOPeDn/jcSPCyzNLa0BAQEBAQEBAQEBAQEBAQEBAQRnCau5CkqJj+zhkf3MJCDSOCdHyNHTRkZthZfe5ukfElXxyhTPOU62MOBa4ZEEHcRYps1uObl+N07opHwu1sPeLXae0EFJ83EyVmlprPg1SM2mZ1SDzV//wAp9l/XHPsuR1kgmDA86LvSc3Kzi8ku0tuRAXJvrSa46zTeufT6N3qGXY0/bZ/Tyt3Lm3tqzdgwc0pVzcnLGfsEW26JvbeQXdyzzbbtYcPJDcIaLlxpUtbBA13rS4BsltRDZBnqyztvV2HJFfzVmfLybezkiute8+n8e7XWyUUTeQEl4ci9sFpZZyDlykhsxjAdTWk9pW6Jvae1MfVditExEVjp0jwj385T0XCaXQDKOBtPGBYE/WSW7fRB7CvcestMcL2viyzv0ahUiWsqdGaV8jWG7y5xIuPZA1DsXSxRFKbZLYa5s0Y6x8Nec+/hDbcNoPpdS4sb6IDQ86gdEWu4+G02XQwz3OCO39GLjc1IyWtV0BsIaLBY7Xm07lxrzNp3KhwUbV6aHxsT2hp4hrfOXW2iJhPm4LxknksxxzdpwOk5GmhitbQiY3ta0AqhczkBAQEBAQEBAQEBAQEBAQEBAQaZxuSn/hr4WmzqmWGnB/xZWh35Q5BW2KxsAbDIZdAyCt2r0yY2qNp01PjHwy7GVLRmw8m/ra7mHsNx95WY53PZlg47FuIvHhyn2cprcpmn7TT4haIjWO0T6qMUbpMGDs05gdgaPyhcTNOqtmLHvUe7o9XHoxM3sP52rj5b/F9Xa4bBzRvCqr9INabPIeY+i743D0b7SDbtU4o3znp4/N0sVNQ0OvxKKoN5aRwf0ua/QJI95hBF+vWunTHbHHK3L2edd5MfDPzSmEtgAv8AR5L7XPbbyXm3bn/J0ccTWOkQyZscJLW07Yw3MucDyhAGWiDqBJy3Aq/Fg3+ZVbLN5iKW35z9+v6bODGGOqZG09ObB3pSSa7N9pw27+kldulIiO8vHKOkOfxHF1x4+xi+c+f/AH5/R2Ojw+OCMRQsDGN1DpJ2uPSTtWa+S157Vp5uFMzM7l5IFG3nTHcFO0ac/wCGMfL4rQU9r6LQ4/xZQ0/laq7yso7yq3sQEBAQEBAQEBAQEBAQEBBZmq42c+Rjd7gPNBFVXC/D4+fXQDq5RpPcCSgiKrjPwtn/AFJf8Ech8dGyDm/G9wzhxGnhhoy+7JeUdpDQuA0hts88zfsQczGI1zObU1Dfhlf8nIMuDhlikfNr6kb3ud+q6C/UcYWKSMdFLVuexws4OjjN8769G41bVMWmJ3DzekXrNZ6ShzjcxcHEtJG1vUR0b1bfPe0TE+KmOFxxGo2v4dwikhcXBjHXN8792RWTJhi/WV+OsU6NjqOMp72hrqRmQAuHuGog9IPurDf8Ni077X6N2HjO7/x2hsc4TiqbZ8JaRKZGEPvYOFnMOQ6jfqV+DhO6nlO+WuicnF1ya3Xp6qaThA0WEjNI+8Rd3ab+lvKm3Dz4NWL8Rx1jU7/Rl1+OwPic1rn6RFgNCzRci5yPQLr1ixWrbcrMv4hivSa12sMxGnawMa64AAsQ4aZ2E2yaNZ26lvwzWJ3MqcvFYux2KTy8vP39HV+AuMYXTQZ4hBysmchcSw9TfSAsOm24dCs4jNFpiK9IczLbtTybXFj9HJ6utp3bpoz/ADKjanS5y7Hc17HbnNPkVOzSlzCdQ+anaNNFwNnL8JDsgs0744XEj8bgvFp5vdejt68pEBAQEBAQeE7UGFVYzTR+sqIm/E9o+aCJqeHuGs51bGfg0pP0AoIqfjVw4c0zP+GJzR3vsgjKjjghHq6OU/E5jR4EoIup436g+qo4m/G9z/ABqCLqONHEnX0TAz4Yz5ucfJBEVXDjFHg/808dTCxg7w0FBC1mNVrxeWonceuaQgDdp2QR8umTYnSvb0tE5ZbSAgxy82IJPUpFpwyt39J8BqUDyRouMhbx67gnWg9a06XX0Wzz6BlcKRQ1rrGxPj39ShClzjYf2vb/AHtRLx4zHoixF9W3uQeFjbkFjerozQUiBhy0M79B/t80HhpozqDkHn0SO9tJwG23y1oPRh7T+0t1kWB3GyCkYdcXDx2iyDwYW45BzSdaCg4XJsae3+yDwYfINTe4hBcBqYxpB0rQOkPI8ig6t/8AnelLp6iZ1yQzWc7mR4zvt+rPeg7xdAug9QEBB5dBo/GFhVdMWvo8RFO0NIdG5zo2ude+lpsBIyy1IOQ4thda0/XObOdrZuVH53A+CCJcx7OdTubuabd4FkFArWdOXcgutnaenwUgZPdLO0lBSeV6NHsz80Fp4m2O7APkgx5NL2tLtuoFkgIFlKF1mmdWn4oLgglPs94b80SqbSP2MH+/soLjaAe1bsv8yiD/AIc3oLh3f0QefQBe5OV825i46RcHJBafhxubEAX1Z5DoFyCgtmhf1dhRKkUbidVt9v6lBcjw839LV1f3CCplI0a3AjZe3kUHggjHST4/JBW1zBqBHbZBRJUAamtO82+SAKoW6L9QLhf5oKYoZnmwe4X2BsY73INvwfi/kqmnlqmNjSLfV3mf26mjvKbHWOA/B2LDoORgD3Fx0pHuFnPdawyGTWgahvOZJUDaGSnYgutcgrBQVICDxBSQgszUcb+fGx29oKCNqOC1E/nUrOy7T+UhBE1fF1Qv9iRu55Pg66CDq+KCmdzJnN3safEWKCGquJuQeqqWHfyjfmQgianipr280Nd8L2n9QCCKqeBOJRa6eXsaT+glBHS0NXHz4njeHD9TUGO6V/tR37GnyKketqrfs7fdI+SCsV7T0jvHzQViZp2+fkgokqGN5zgN+Xmgp+ks99vegodWsHtdwPzQWH4owbe0gf1QWzid9TL/AIneVkHoqpTzY3fhA/UgyIaKsk5kEh3A/wAoQSVNwJxOTVSvG9rv5rKBK03FXiT+dos3lo8roJWm4mpz6ypYNxcfIBBLUvExCPWVDjub/wCxKCYpeKegbzhI7tDfIIJam4A4ezVTA/E5zvMoJSn4O0rOZTxj7oQZ8dK1vNaBuACC8GoKgEHqD1B6gIPEHlkHlkCyAgICBZAsg8cwHXnvzQYVRg9PJ6ynidvY3+iCLqeA+Hv10rB8Jc3yKCJquK6hfzeUb97S/UEENVcTcJ9XUW+KMebSEEXUcS0hyFTGR/EHhcoPIOJB3t1bQOoPPzCCVpeJWkHrJ3u3NA8yUExScVeHM1xvdvdb9ICCXpuA+Hs1UjD8V3eZQSdPg1OzmU8TdzGj5IMxsYGoAbskHuig90UDRQLIPbIFkCyD2yBZB6gICD1AQEBB5ZAsgWQLIFkCyBZAsgWQLIFkCyBZAsgWQLIFkCyBZAsgWQLIFkCyBZAQEBB6gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg//Z" alt="">
                 <h1>Tapping students to fight cybercrime</h1>
                 <p>Learn how universities are training students about things on Microsoft security tools and AI to protect against cyberthreats.</p>
-                <button class="business-btn" style="margin-bottom: 0;">Uncover the details</button>
+                <button class="business-btn">Uncover the details</button>
             </div>
             <div class="card card2">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfQYcyyJTovCB2xdNtN3o1sFVkTkKqAW-ylg&s" alt="">
@@ -755,7 +769,7 @@
                 <img src="https://www.netcombrunei.com/media/catalog/product/cache/7fba28f2ffd14e7be21e170ce6bb6de8/m/s/ms-461-1.jpg" alt="">
                 <h1>How AI makes hard work easier</h1>
                 <p>Dive into the surprising ways that Copilot reduces the mental effort of complex tasks and enhances quality of work.</p>
-                <button class="business-btn" style="margin-bottom: 0;">Uncover the details</button>
+                <button class="business-btn">Uncover the details</button>
             </div>
         </div>
     </div>
